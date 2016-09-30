@@ -1,0 +1,11 @@
+# Temp files
+*.swp
+
+# Arduino
+arduino/build
+arduino/hardware
+arduino/libraries
+
+# Node.js
+nodejs/node_modules
+nodejs/npm-debug.log
