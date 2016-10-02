@@ -1,0 +1,27 @@
+{
+  "name": "arduino2node",
+  "description": "A simple web server to receive data from arduino via TCP Socker",
+  "main": "index.js",
+  "authors": [
+    "Paulo Diovani <paulo@diovani.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "arduino",
+    "nodejs",
+    "tcp",
+    "socket"
+  ],
+  "homepage": "https://github.com/paulodiovani/arduino2node",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/paulodiovani/arduino2node#readme",
   "dependencies": {
+    "bower": "^1.7.9",
     "debug": "^2.2.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0"
