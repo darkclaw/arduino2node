@@ -4,6 +4,7 @@ const Express = require('express');
 const Path = require('path');
 
 const app = Express();
+const Http = require('http').Server(app);
 
 // view engine setup
 app.set('views', Path.join(__dirname, '..', 'views'));
@@ -17,4 +18,4 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-module.exports = app;
+module.exports = Http;

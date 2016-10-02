@@ -22,11 +22,6 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Arduino to Node example</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
     </nav>
 
@@ -56,5 +51,12 @@
       </div>
     </div><!-- /.container -->
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      var socket = io();
+      socket.on('arduino:message', function(data) {
+        console.log(data);
+      });
+    </script>
   </body>
 </html>

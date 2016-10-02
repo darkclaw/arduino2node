@@ -3,8 +3,10 @@
 const LogSocket = require('debug')('socket');
 const LogWeb = require('debug')('web');
 
-const SocketServer = require('./lib/socket_server');
 const WebServer = require('./lib/web_server');
+const Io = require('socket.io')(WebServer);
+
+const SocketServer = require('./lib/socket_server')(Io);
 
 // start the Express App
 const server = WebServer.listen(process.env.WEB_PORT || 3000, function() {
