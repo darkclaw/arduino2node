@@ -26,7 +26,7 @@ void loop() {
   Serial.print("cm");
   Serial.println();
 
-  delay(100);
+  delay(1000);
 }
 
 long microsecondsToCentimeters(long microseconds) {
