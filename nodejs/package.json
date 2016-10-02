@@ -4,10 +4,11 @@
   "description": "A simple web server to receive data from arduino via TCP Socker",
   "main": "index.js",
   "private": true,
-  "engines" : {
-    "node" : "~6.7.0"
-  }
+  "engines": {
+    "node": "~6.7.0"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/paulodiovani/arduino2node/issues"
   },
-  "homepage": "https://github.com/paulodiovani/arduino2node#readme"
+  "homepage": "https://github.com/paulodiovani/arduino2node#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
 }
