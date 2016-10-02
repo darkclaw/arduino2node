@@ -9,3 +9,4 @@ arduino/libraries
 # Node.js
 nodejs/node_modules
 nodejs/npm-debug.log
+nodejs/bower_components
