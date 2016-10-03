@@ -1,7 +1,7 @@
 'use strict';
 
-const ClientLog = require('debug')('socket-client');
-const ClientError = require('debug')('socket-client-error');
+const ClientLog = require('debug')('a2n:socket:client');
+const ClientError = require('debug')('a2n:socket:client:error');
 const Net = require('net');
 const Stream = require('stream');
 

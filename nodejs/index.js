@@ -1,7 +1,7 @@
 'use strict';
 
-const LogSocket = require('debug')('socket');
-const LogWeb = require('debug')('web');
+const LogSocket = require('debug')('a2n:socket');
+const LogWeb = require('debug')('a2n:web');
 
 const WebServer = require('./lib/web_server');
 const Io = require('socket.io')(WebServer);
