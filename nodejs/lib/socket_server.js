@@ -3,7 +3,7 @@
 const ClientLog = require('debug')('socket-client');
 const ClientError = require('debug')('socket-client-error');
 const Net = require('net');
-const Writable = require('stream').Writable;
+const Stream = require('stream');
 
 let Io; //Socket.io instance
 
@@ -15,8 +15,22 @@ const onError = (err) => {
   ClientError(err.message);
 };
 
-const browserStream = new Writable({
-  write: (chunk, encoding, callback) => {
+//split json to allow parse
+const splitStream = new Stream.Transform({
+  transform: function(chunk, encoding, callback) {
+    const text = chunk.toString();
+    const re = /(\{[^\}]*\})/;
+    const jsonArr = text.split(re).filter((j) => j != '');
+
+    jsonArr.map((j) => this.push(j));
+
+    callback();
+  }
+});
+
+//send to browser through socket.io
+const browserStream = new Stream.Writable({
+  write: function(chunk, encoding, callback) {
     ClientLog(`Client sent: ${chunk.toString()}`);
 
     const json = JSON.parse(chunk.toString());
@@ -35,6 +49,8 @@ module.exports = (io) => {
     client.on('end', onEndConnection);
     client.on('error', onError);
 
-    client.pipe(browserStream);
+    client
+      .pipe(splitStream)
+      .pipe(browserStream);
   });
 };
